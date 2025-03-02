@@ -1,6 +1,8 @@
 # websitebanhangcuahuy
 About my website
 -Đây là trang web đầu tay của em và cũng có font end thôi ạ nên chắc chắn sẽ không được hoàn thiện như các anh chị trên đại học hay đã đi làm mong mn dùng code với tâm trang hoan hỷ và dùng với mục đích tham khảo ạ.
+-em không tự nói code em đẹp hay cao siêu j đâu nhá, mn đừng có chửi em nha :((
+
 -trang web này chỉ có 90% là em tự code 10% còn lại em có thảm khảo trên mạng và một số video trên youtube cùng với nhờ chatgpt hỗ trợ ạ.
 -Đây là trang web em làm khi còn đi học c3 tức kiến thức về html, và java script gần như bằng 0 nên sẽ có sai sót, việc em dùng chatgpt hỗ trợ hay tham khảo mong mn hiểu cho vì em đang trong dai đoạn học hỏi không thể 100% tự code một font-end quá hoàn hảo được ạ.
 /* cho phép em được kho tý ạ :> trang web của em được điểm tuyệt đối :))
