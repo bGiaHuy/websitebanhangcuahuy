@@ -1,0 +1,129 @@
+/* Footer */
+footer {
+    background-color: #CC2B52;
+    color: white;
+    padding: 10px 0; /* Giảm padding để footer gọn hơn */
+    font-size: 14px;
+  }
+  
+  footer .container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between; /* Căn đều các phần */
+    align-items: center; /* Căn giữa các mục theo chiều dọc */
+    flex-wrap: wrap; /* Đảm bảo không bị tràn trên màn hình nhỏ */
+    text-align: center; /* Căn giữa nội dung trên màn hình nhỏ */
+  }
+  
+  footer .footer-section {
+    flex: 1; /* Chia đều không gian giữa các cột */
+    margin: 5px 10px; /* Giảm margin để không bị rộng */
+    min-width: 150px; /* Đảm bảo kích thước tối thiểu để cột không bị thu nhỏ quá mức */
+  }
+  
+  footer h4 {
+    margin-bottom: 8px; /* Giảm khoảng cách giữa tiêu đề và nội dung */
+    font-size: 16px;
+    color: #f9d342;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    margin: 5px 0;
+  }
+  
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  
+  footer ul li a:hover {
+    color: #f9d342;
+  }
+  
+  footer .social-icons a {
+    color: white;
+    font-size: 18px;
+    margin: 0 5px; /* Giảm khoảng cách giữa các biểu tượng */
+    transition: color 0.2s;
+  }
+  
+  footer .social-icons a:hover {
+    color: #f9d342;
+  }
+  
+  /* Responsive Footer */
+  @media (max-width: 600px) {
+    footer .container {
+      flex-direction: column; /* Đặt các mục theo chiều dọc trên màn hình nhỏ */
+      text-align: center;
+    }
+  
+    footer .footer-section {
+      margin: 10px 0;
+    }
+  
+    footer .social-icons {
+      margin-top: 10px;
+    }
+  }
+/* Notifications */
+.notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Khoảng cách giữa các thông báo */
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  
+  .notification {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .notification h4 {
+    margin-bottom: 5px;
+    color: #CC2B52;
+    font-size: 16px;
+  }
+  
+  .notification p {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .notification span {
+    font-size: 12px;
+    color: #888;
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+  }
+  
+  /* Responsive Notifications */
+  @media (max-width: 600px) {
+    .notifications {
+      padding: 0 10px;
+    }
+  
+    .notification {
+      padding: 10px;
+    }
+  
+    .notification span {
+      bottom: 5px;
+      right: 10px;
+    }
+  }
+    

@@ -1,0 +1,209 @@
+/* Reset một số thuộc tính mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FEF9E1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  header {
+    background: #CC2B52;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  header img {
+    max-width: 100%;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Đảm bảo căn giữa các mục */
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px; /* Kiểm soát kích thước nút */
+    border-radius: 5px;
+    font-size: 14px;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  
+  nav ul li a:hover {
+    background-color: #740938;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Input và Button trong thanh tìm kiếm */
+  nav ul li input[type="text"] {
+    max-width: 180px; /* Giới hạn chiều rộng */
+    width: 100%;
+    padding: 5px; /* Giảm padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  nav ul li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 5px; /* Điều chỉnh padding */
+    color: #ffffff;
+  }
+  
+  nav ul li button:hover {
+    color: #f9d342;
+  }
+  
+  /* Menu Bar */
+  .menu-bar {
+    background-color: #CC2B52;
+    padding: 10px 0;
+  }
+  
+  .menu-bar ul {
+    display: flex;
+    justify-content: space-between; /* Căn đều các mục */
+    padding: 0;
+    list-style: none;
+  }
+  
+  .menu-bar ul li {
+    margin: 0 10px; /* Thêm khoảng cách giữa các mục */
+  }
+  
+  .menu-bar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 5px 10px; /* Tạo thêm không gian bên trong */
+    transition: all 0.2s ease;
+    border-radius: 5px;
+  }
+  
+  .menu-bar ul li a:hover {
+    color: #f9d342;
+    transform: scale(1.1);
+    background-color: #740938; /* Hiệu ứng hover rõ ràng hơn */
+  }
+  
+  /* Form Đăng Ký */
+  .flex {
+    padding: 5% 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+    z-index: 1; /* Đảm bảo form nằm trên các thành phần khác */
+    position: relative;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  form input:focus {
+    border-color: #CC2B52;
+    outline: none;
+    box-shadow: 0px 0px 4px #CC2B52;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #CC2B52;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #740938;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #CC2B52;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul li {
+      margin-bottom: 10px;
+    }
+  
+    .menu-bar ul {
+      flex-direction: column;
+    }
+  
+    .menu-bar ul li {
+      margin: 10px 0;
+    }
+  
+    form {
+      width: 90%;
+    }
+  
+    .flex {
+      padding: 10% 0;
+    }
+  }
+  

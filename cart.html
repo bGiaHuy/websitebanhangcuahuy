@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="https://web.nvnstatic.net/js/events/newyear.js"></script>
+  <script type="text/javascript" src="https://web.nvnstatic.net/js/events/firework.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <img src="images/adsbanner.png" style="max-width: 100%;" alt="Banner">
+    <hr style="border: none; height: 3px; background-color: #f2ae6600; margin: 10px 0;">
+    <nav>
+      <div class="container">
+        <ul>
+          <li class="box">
+            <b><a href="home.html" style="width: 195px; display: block; text-align: left;">Trang web bán đồ điện tử</a></b>
+          </li>
+          <li class="box">
+            <p style="font-size: xx-small;">Xem tồn kho tại</p>
+            <select class="v3_location_name">
+              <option value="1" selected>Hà Nội</option>
+              <option value="2">TP. Hồ Chí Minh</option>
+              <option value="3">Đà Nẵng</option>
+            </select>
+          </li>
+          <li style="display: flex; align-items: center;">
+            <input type="text" placeholder="Tìm kiếm" style="padding: 5px; border-radius: 5px;">
+            <button style="background-color: transparent; border: none; cursor: pointer;">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="box"><a href="cart.html"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a></li>
+          <li class="box"><a href="login.html"><i class="fa fa-sign-in"></i> Đăng nhập</a></li>
+          <li class="box"><a href="sign-in.html"><i class="fa fa-user-plus"></i> Đăng ký</a></li>
+          <li class="box"><a href="notifications.html"><i class="fa fa-bell"></i> Thông báo</a></li>
+        </ul>
+      </div>
+    </nav>
+    <hr style="border: none; height: 3px; background-color: #F2AE66; margin: 20px 0;">
+    <section class="menu-bar">
+      <div class="container">
+        <ul>
+          <li><a href="phones.html"><i class="fas fa-mobile-alt"></i> Điện thoại</a></li>
+          <li><a href="laptops.html"><i class="fas fa-laptop"></i> Laptop</a></li>
+          <li><a href="tablets.html"><i class="fa-solid fa-tablet-button"></i> Máy tính bảng</a></li>
+          <li><a href="tvs.html"><i class="fa-solid fa-tv"></i> TV</a></li>
+          <li><a href="accessories.html"><i class="fa-brands fa-slack"></i> Phụ kiện</a></li>
+          <li><a href="headphones.html"><i class="fas fa-headphones"></i> Tai nghe</a></li>
+        </ul>
+      </div>
+    </section>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1 style="text-align: center; margin: 20px 0;">Giỏ hàng của bạn</h1>
+    <div class="cart-container">
+      <div class="cart-products">
+        <!-- Sản phẩm sẽ được hiển thị tại đây -->
+      </div>
+      <div class="cart-summary">
+        <h3>Tổng cộng</h3>
+        <p>Thành tiền: <span class="total-price">0 VNĐ</span></p>
+        <button class="checkout-btn">Thanh toán</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p style="text-align: center;">&copy; 2025 Trang web bán đồ điện tử.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartContainer = document.querySelector(".cart-products");
+      const totalPriceElement = document.querySelector(".total-price");
+
+      let totalPrice = 0;
+      cart.forEach((product, index) => {
+        const productHTML = `
+          <div class="cart-item" style="display: flex; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+            <img src="${product.image}" alt="${product.name}" style="width: 80px; height: 80px; margin-right: 15px;">
+            <div class="item-details">
+              <h3 style="margin: 0;">${product.name}</h3>
+              <p style="margin: 5px 0;">${product.price}</p>
+              <button class="remove-item" data-index="${index}" style="color: #fff; background-color: #CC2B52; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;">
+                Xóa
+              </button>
+            </div>
+          </div>
+        `;
+        cartContainer.innerHTML += productHTML;
+
+        const price = parseFloat(product.price.replace(/[^0-9]/g, ""));
+        totalPrice += price;
+      });
+
+      totalPriceElement.innerText = totalPrice.toLocaleString("vi-VN") + " VNĐ";
+
+      document.querySelectorAll(".remove-item").forEach(button => {
+        button.addEventListener("click", () => {
+          const index = button.getAttribute("data-index");
+          cart.splice(index, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          window.location.reload();
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
